@@ -1,0 +1,19 @@
+@import "variables";
+@import "mixins";
+
+.bucket-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: $white;
+    padding: $padding-small;
+    border-radius: $border-radius-size;
+    @include shadow;
+}
+
+.over-budget {
+    color: map-get($warn-palette, 500);
+}
+
+.within-budget {
+    color: map-get($primary-palette, 500);
+}

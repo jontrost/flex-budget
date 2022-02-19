@@ -1,0 +1,43 @@
+@use "@angular/material" as mat;
+@include mat.core();
+@import "variables";
+
+/* ------------------------------------------------------------------------- */
+/*                     Angular Material Custom Theming                       */
+/* ------------------------------------------------------------------------- */
+
+$mat-primary-palette: mat.define-palette($primary-palette);
+$mat-accent-palette: mat.define-palette($accent-palette);
+$mat-warn-palette: mat.define-palette($warn-palette);
+
+$typography: mat.define-typography-config(
+    $font-family: "Varela Round"
+);
+
+$theme: mat.define-light-theme(
+    (
+        color: (
+            primary: $mat-primary-palette,
+            accent: $mat-accent-palette,
+            warn: $mat-warn-palette
+        )
+    )
+);
+
+@include mat.core($typography);
+@include mat.all-component-themes($theme);
+
+/* ------------------------------------------------------------------------- */
+/*                              Global Styles                                */
+/* ------------------------------------------------------------------------- */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Varela Round", sans-serif;
+    background-color: map-get($primary-palette, 300);
+}
