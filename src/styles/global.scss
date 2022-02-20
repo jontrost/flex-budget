@@ -39,5 +39,20 @@ body {
 body {
     margin: 0;
     font-family: "Varela Round", sans-serif;
-    background-color: map-get($primary-palette, 300);
+    background-color: map-get($primary-palette, 400);
+}
+
+/* ------------------------------------------------------------------------- */
+/*                    Global Angular Material Overrides                      */
+/* ------------------------------------------------------------------------- */
+
+.mat-tab-label {
+    &.mat-tab-label-active {
+        opacity: 1;
+    }
+}
+
+.mat-tab-labels {
+    padding-top: $spacing-tiny;
+    padding-bottom: $spacing-tiny;
 }

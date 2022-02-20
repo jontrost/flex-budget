@@ -7,7 +7,7 @@
     background-color: $white;
     padding: $spacing-small;
     border-radius: $border-radius-size;
-    @include shadow;
+    @include hoverable-shadow;
 }
 
 .over-budget {
