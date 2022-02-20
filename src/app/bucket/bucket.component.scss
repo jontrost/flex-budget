@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     background-color: $white;
-    padding: $padding-small;
+    padding: $spacing-small;
     border-radius: $border-radius-size;
     @include shadow;
 }

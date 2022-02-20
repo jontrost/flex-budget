@@ -1,0 +1,13 @@
+<div class="category-container">
+    <div class="label mat-h1">
+        {{ label }}
+        <hr class="line" />
+    </div>
+    <bucket
+        *ngFor="let bucket of buckets"
+        [label]="bucket.label"
+        [spentAmount]="bucket.spentAmount"
+        [budgetedAmount]="bucket.budgetedAmount"
+    >
+    </bucket>
+</div>

@@ -1,6 +1,8 @@
 <div class="main-grid-layout">
     <div class="budget">
-        <bucket label="Label" [spentAmount]="101" [budgetedAmount]="100"></bucket>
-        <router-outlet></router-outlet>
+        <category label="Housing" [buckets]="sampleBuckets"></category>
+        <category label="Not Housing" [buckets]="sampleBuckets"></category>
+        <category label="Also Not Housing" [buckets]="sampleBuckets"></category>
     </div>
+    <router-outlet></router-outlet>
 </div>

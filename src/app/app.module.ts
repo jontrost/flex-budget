@@ -6,9 +6,10 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BucketComponent } from "./bucket/bucket.component";
+import { CategoryComponent } from "./category/category.component";
 
 @NgModule({
-    declarations: [AppComponent, BucketComponent],
+    declarations: [AppComponent, BucketComponent, CategoryComponent],
     imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatButtonModule],
     providers: [],
     bootstrap: [AppComponent]
