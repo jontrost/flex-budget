@@ -24,4 +24,5 @@ export class AppComponent {
             spentAmount: 45
         }
     ];
+    sampleDate = new Date();
 }

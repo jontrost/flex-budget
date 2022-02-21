@@ -2,12 +2,7 @@
 @import "mixins";
 
 .bucket-container {
-    display: flex;
-    justify-content: space-between;
-    background-color: $white;
-    padding: $spacing-small;
-    border-radius: $border-radius-size;
-    @include hoverable-shadow;
+    @include card-sliver;
 }
 
 .over-budget {

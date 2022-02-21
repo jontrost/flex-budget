@@ -10,3 +10,12 @@
         box-shadow: 0 0.5rem 0.75rem 0 rgba(0, 0, 0, 0.2);
     }
 }
+
+@mixin card-sliver {
+    display: flex;
+    justify-content: space-between;
+    background-color: $white;
+    padding: $spacing-small;
+    border-radius: $border-radius-size;
+    @include hoverable-shadow;
+}

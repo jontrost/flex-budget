@@ -1,0 +1,11 @@
+@import "variables";
+@import "mixins";
+
+.expense-container {
+    @include card-sliver;
+}
+
+.left-section {
+    display: flex;
+    gap: $spacing-medium;
+}

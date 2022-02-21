@@ -12,9 +12,11 @@
         </mat-tab>
         <mat-tab>
             <ng-template mat-tab-label>
-                <span class="mat-display-1 tabs-label">Transactions</span>
+                <span class="mat-display-1 tabs-label">Expenses</span>
             </ng-template>
-            transactions content
+            <expense label="Expense 1" [date]="sampleDate" [cost]="50"></expense>
+            <expense label="Expense 2" [date]="sampleDate" [cost]="50"></expense>
+            <expense label="Expense 3" [date]="sampleDate" [cost]="50"></expense>
         </mat-tab>
     </mat-tab-group>
     <router-outlet></router-outlet>
