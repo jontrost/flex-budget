@@ -5,9 +5,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { BucketComponent } from "./bucket/bucket.component";
-import { CategoryComponent } from "./category/category.component";
-import { ExpenseComponent } from "./expense/expense.component";
+import { BucketComponent } from "./budget/category/bucket/bucket.component";
+import { CategoryComponent } from "./budget/category/category.component";
+import { ExpenseComponent } from "./expenses/expense/expense.component";
 import { ExpensesComponent } from "./expenses/expenses.component";
 import { BudgetComponent } from "./budget/budget.component";
 
