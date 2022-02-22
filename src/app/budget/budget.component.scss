@@ -1,0 +1,8 @@
+@import "variables";
+
+.budget-container {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-large;
+    padding: $spacing-medium;
+}

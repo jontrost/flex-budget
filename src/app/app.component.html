@@ -4,11 +4,7 @@
             <ng-template mat-tab-label>
                 <span class="mat-display-1 tabs-label">Budget</span>
             </ng-template>
-            <div class="budget">
-                <category label="Housing" [buckets]="sampleBuckets"></category>
-                <category label="Not Housing" [buckets]="sampleBuckets"></category>
-                <category label="Also Not Housing" [buckets]="sampleBuckets"></category>
-            </div>
+            <budget [categories]="sampleCategories"></budget>
         </mat-tab>
         <mat-tab>
             <ng-template mat-tab-label>

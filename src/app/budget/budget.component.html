@@ -1,0 +1,8 @@
+<div class="budget-container">
+    <category
+        *ngFor="let category of categories"
+        [label]="category.label"
+        [buckets]="category.buckets"
+    >
+    </category>
+</div>

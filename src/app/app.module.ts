@@ -9,6 +9,7 @@ import { BucketComponent } from "./bucket/bucket.component";
 import { CategoryComponent } from "./category/category.component";
 import { ExpenseComponent } from "./expense/expense.component";
 import { ExpensesComponent } from "./expenses/expenses.component";
+import { BudgetComponent } from "./budget/budget.component";
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { ExpensesComponent } from "./expenses/expenses.component";
         BucketComponent,
         CategoryComponent,
         ExpenseComponent,
-        ExpensesComponent
+        ExpensesComponent,
+        BudgetComponent
     ],
     imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatTabsModule],
     providers: [],

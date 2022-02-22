@@ -15,13 +15,6 @@
     }
 }
 
-.budget {
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-large;
-    padding: $spacing-medium;
-}
-
 .tabs-layout {
     grid-column: 1 / -1;
 }

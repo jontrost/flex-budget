@@ -7,23 +7,35 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
     title = "flex-budget";
-    sampleBuckets = [
+
+    sampleCategories = [
         {
-            budgetedAmount: 50,
-            label: "label",
-            spentAmount: 45
+            label: "Category 1",
+            buckets: [
+                {
+                    budgetedAmount: 150,
+                    label: "label",
+                    spentAmount: 50
+                }
+            ]
         },
         {
-            budgetedAmount: 50,
-            label: "label",
-            spentAmount: 45
-        },
-        {
-            budgetedAmount: 50,
-            label: "label",
-            spentAmount: 45
+            label: "Category 2",
+            buckets: [
+                {
+                    budgetedAmount: 150,
+                    label: "label",
+                    spentAmount: 50
+                },
+                {
+                    budgetedAmount: 100,
+                    label: "label",
+                    spentAmount: 50
+                }
+            ]
         }
     ];
+
     sampleExpenses = [
         {
             cost: 50,
