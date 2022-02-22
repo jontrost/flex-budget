@@ -1,0 +1,9 @@
+<div class="expenses-container">
+    <expense
+        *ngFor="let expense of expenses"
+        [label]="expense.label"
+        [date]="expense.date"
+        [cost]="expense.cost"
+    >
+    </expense>
+</div>

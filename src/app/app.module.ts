@@ -8,9 +8,16 @@ import { AppComponent } from "./app.component";
 import { BucketComponent } from "./bucket/bucket.component";
 import { CategoryComponent } from "./category/category.component";
 import { ExpenseComponent } from "./expense/expense.component";
+import { ExpensesComponent } from "./expenses/expenses.component";
 
 @NgModule({
-    declarations: [AppComponent, BucketComponent, CategoryComponent, ExpenseComponent],
+    declarations: [
+        AppComponent,
+        BucketComponent,
+        CategoryComponent,
+        ExpenseComponent,
+        ExpensesComponent
+    ],
     imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatTabsModule],
     providers: [],
     bootstrap: [AppComponent]

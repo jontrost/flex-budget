@@ -24,5 +24,16 @@ export class AppComponent {
             spentAmount: 45
         }
     ];
-    sampleDate = new Date();
+    sampleExpenses = [
+        {
+            cost: 50,
+            date: new Date(),
+            label: "label 1"
+        },
+        {
+            cost: 150,
+            date: new Date(),
+            label: "label 2"
+        }
+    ];
 }
