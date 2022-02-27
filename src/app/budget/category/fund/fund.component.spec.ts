@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { BucketComponent } from "./bucket.component";
+import { FundComponent } from "./fund.component";
 
-describe("BucketComponent", () => {
-    let component: BucketComponent;
-    let fixture: ComponentFixture<BucketComponent>;
+describe("FundComponent", () => {
+    let component: FundComponent;
+    let fixture: ComponentFixture<FundComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [BucketComponent]
+            declarations: [FundComponent]
         }).compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(BucketComponent);
+        fixture = TestBed.createComponent(FundComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

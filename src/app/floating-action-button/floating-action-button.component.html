@@ -1,0 +1,27 @@
+<div class="fab-container">
+    <label *ngIf="isOpen" [@fade] for="create-category" class="create-category-label">
+        Create Category
+    </label>
+    <label *ngIf="isOpen" [@fade] for="create-fund" class="create-fund-label"> Create Fund </label>
+    <label *ngIf="isOpen" [@fade] for="create-expense" class="create-expense-label">
+        Create Expense
+    </label>
+    <button [@isOpenChange]="isOpen" class="main-fab" mat-fab (click)="toggleFab()">
+        <mat-icon>add</mat-icon>
+    </button>
+    <button *ngIf="isOpen" [@fade] id="create-expense" class="create-expense-mini-fab" mat-mini-fab>
+        <mat-icon>payments</mat-icon>
+    </button>
+    <button *ngIf="isOpen" [@fade] id="create-fund" class="create-fund-mini-fab" mat-mini-fab>
+        <mat-icon>savings</mat-icon>
+    </button>
+    <button
+        *ngIf="isOpen"
+        [@fade]
+        id="create-category"
+        class="create-category-mini-fab"
+        mat-mini-fab
+    >
+        <mat-icon>folder</mat-icon>
+    </button>
+</div>

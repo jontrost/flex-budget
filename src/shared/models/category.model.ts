@@ -1,6 +1,6 @@
-import { Bucket } from "./bucket.model";
+import { Fund } from "./fund.model";
 
 export interface Category {
     label: string;
-    buckets: Bucket[];
+    funds: Fund[];
 }

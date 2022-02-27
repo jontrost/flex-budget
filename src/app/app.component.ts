@@ -11,7 +11,7 @@ export class AppComponent {
     sampleCategories = [
         {
             label: "Category 1",
-            buckets: [
+            funds: [
                 {
                     budgetedAmount: 150,
                     label: "label",
@@ -21,7 +21,7 @@ export class AppComponent {
         },
         {
             label: "Category 2",
-            buckets: [
+            funds: [
                 {
                     budgetedAmount: 150,
                     label: "label",

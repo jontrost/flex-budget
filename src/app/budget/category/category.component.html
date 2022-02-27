@@ -3,11 +3,11 @@
         {{ label }}
         <hr class="line" />
     </div>
-    <bucket
-        *ngFor="let bucket of buckets"
-        [label]="bucket.label"
-        [spentAmount]="bucket.spentAmount"
-        [budgetedAmount]="bucket.budgetedAmount"
+    <fund
+        *ngFor="let fund of funds"
+        [label]="fund.label"
+        [spentAmount]="fund.spentAmount"
+        [budgetedAmount]="fund.budgetedAmount"
     >
-    </bucket>
+    </fund>
 </div>

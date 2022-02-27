@@ -1,5 +1,5 @@
 <div class="main-grid-layout">
-    <mat-tab-group mat-stretch-tabs class="tabs-layout" color="accent" backgroundColor="accent">
+    <mat-tab-group mat-stretch-tabs class="tabs-layout" backgroundColor="primary">
         <mat-tab>
             <ng-template mat-tab-label>
                 <span class="mat-display-1 tabs-label">Budget</span>
@@ -13,5 +13,6 @@
             <expenses [expenses]="sampleExpenses"></expenses>
         </mat-tab>
     </mat-tab-group>
+    <floating-action-button></floating-action-button>
     <router-outlet></router-outlet>
 </div>

@@ -1,6 +1,6 @@
-<div class="bucket-container">
+<div class="fund-container">
     <span>{{ label }}</span>
-    <div class="bucket-amounts">
+    <div>
         <span [ngClass]="spentAmount - budgetedAmount > 0 ? 'over-budget' : 'within-budget'">
             ${{ spentAmount }}
         </span>

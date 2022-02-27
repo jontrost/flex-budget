@@ -1,0 +1,54 @@
+@import "variables";
+
+.fab-container {
+    position: fixed;
+    bottom: $spacing-medium;
+    right: $spacing-medium;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: max-content;
+    grid-template-rows: repeat(4, 1fr);
+    grid-row-gap: $spacing-tiny;
+    grid-template-areas:
+        "expense-label  expense"
+        "fund-label     fund"
+        "category-label category"
+        ".              main";
+    justify-items: center;
+    align-items: center;
+}
+
+.main-fab {
+    margin-top: $spacing-tiny;
+    grid-area: main;
+}
+
+.create-category-mini-fab {
+    grid-area: category;
+}
+
+.create-fund-mini-fab {
+    grid-area: fund;
+}
+
+.create-expense-mini-fab {
+    grid-area: expense;
+}
+
+.create-category-label {
+    grid-area: category-label;
+    justify-self: flex-end;
+    margin-right: $spacing-tiny;
+}
+
+.create-fund-label {
+    grid-area: fund-label;
+    justify-self: flex-end;
+    margin-right: $spacing-tiny;
+}
+
+.create-expense-label {
+    grid-area: expense-label;
+    justify-self: flex-end;
+    margin-right: $spacing-tiny;
+}

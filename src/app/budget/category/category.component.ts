@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { Bucket } from "src/shared/models/bucket.model";
+import { Fund } from "src/shared/models/fund.model";
 
 @Component({
     selector: "category",
@@ -8,5 +8,5 @@ import { Bucket } from "src/shared/models/bucket.model";
 })
 export class CategoryComponent {
     @Input() label: string;
-    @Input() buckets: Bucket[];
+    @Input() funds: Fund[];
 }

@@ -1,11 +1,11 @@
 import { Component, Input } from "@angular/core";
 
 @Component({
-    selector: "bucket",
-    templateUrl: "./bucket.component.html",
-    styleUrls: ["./bucket.component.scss"]
+    selector: "fund",
+    templateUrl: "./fund.component.html",
+    styleUrls: ["./fund.component.scss"]
 })
-export class BucketComponent {
+export class FundComponent {
     @Input() label: string;
     @Input() budgetedAmount: number;
     @Input() spentAmount: number;
