@@ -7,24 +7,20 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { FundComponent } from "./budget/category/fund/fund.component";
-import { CategoryComponent } from "./budget/category/category.component";
 import { ExpenseComponent } from "./expenses/expense/expense.component";
 import { ExpensesComponent } from "./expenses/expenses.component";
-import { BudgetComponent } from "./budget/budget.component";
 import { FloatingActionButtonComponent } from "./floating-action-button/floating-action-button.component";
+import { BudgetModule } from "./budget/budget.module";
 
 @NgModule({
     declarations: [
         AppComponent,
-        FundComponent,
-        CategoryComponent,
         ExpenseComponent,
         ExpensesComponent,
-        BudgetComponent,
         FloatingActionButtonComponent
     ],
     imports: [
+        BudgetModule,
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
