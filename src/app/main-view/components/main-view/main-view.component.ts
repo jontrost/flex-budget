@@ -1,49 +1,21 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { Category } from "src/shared/models/category.model";
+import { Expense } from "src/shared/models/expense.model";
+import { ApiService } from "src/shared/services/api.service";
 
 @Component({
     selector: "main-view",
     templateUrl: "./main-view.component.html",
     styleUrls: ["./main-view.component.scss"]
 })
-export class MainViewComponent {
-    sampleCategories = [
-        {
-            label: "Category 1",
-            funds: [
-                {
-                    budgetedAmount: 150,
-                    label: "label",
-                    spentAmount: 50
-                }
-            ]
-        },
-        {
-            label: "Category 2",
-            funds: [
-                {
-                    budgetedAmount: 150,
-                    label: "label",
-                    spentAmount: 50
-                },
-                {
-                    budgetedAmount: 100,
-                    label: "label",
-                    spentAmount: 50
-                }
-            ]
-        }
-    ];
+export class MainViewComponent implements OnInit {
+    sampleCategories: Category[];
+    sampleExpenses: Expense[];
 
-    sampleExpenses = [
-        {
-            cost: 50,
-            date: new Date(),
-            label: "label 1"
-        },
-        {
-            cost: 150,
-            date: new Date(),
-            label: "label 2"
-        }
-    ];
+    constructor(private apiService: ApiService) {}
+
+    ngOnInit(): void {
+        this.sampleCategories = this.apiService.getCategories();
+        this.sampleExpenses = this.apiService.getExpenses();
+    }
 }
