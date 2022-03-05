@@ -1,5 +1,5 @@
+import { animate, state, style, transition, trigger } from "@angular/animations";
 import { Component } from "@angular/core";
-import { trigger, state, style, animate, transition } from "@angular/animations";
 
 @Component({
     selector: "floating-action-button",

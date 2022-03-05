@@ -1,13 +1,13 @@
-import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MatIconModule } from "@angular/material/icon";
+import { NgModule } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
+
 import { FloatingActionButtonComponent } from "./components/floating-action-button/floating-action-button.component";
 
 @NgModule({
     declarations: [FloatingActionButtonComponent],
-    imports: [BrowserAnimationsModule, CommonModule, MatButtonModule, MatIconModule],
+    imports: [CommonModule, MatButtonModule, MatIconModule],
     exports: [FloatingActionButtonComponent]
 })
 export class FloatingActionButtonModule {}

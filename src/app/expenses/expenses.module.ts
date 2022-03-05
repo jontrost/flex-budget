@@ -1,7 +1,8 @@
-import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { ExpensesComponent } from "./components/expenses/expenses.component";
+import { NgModule } from "@angular/core";
+
 import { ExpenseComponent } from "./components/expense/expense.component";
+import { ExpensesComponent } from "./components/expenses/expenses.component";
 
 @NgModule({
     declarations: [ExpensesComponent, ExpenseComponent],
