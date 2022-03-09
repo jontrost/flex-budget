@@ -1,5 +1,5 @@
 <div class="fund-container">
-    <span>{{ label }}</span>
+    <span>{{ name }}</span>
     <div>
         <span [ngClass]="spentAmount - budgetedAmount > 0 ? 'over-budget' : 'within-budget'">
             ${{ spentAmount }}

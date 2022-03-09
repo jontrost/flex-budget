@@ -1,11 +1,11 @@
 <div class="category-container">
     <div class="label mat-h1">
-        {{ label }}
+        {{ name }}
         <hr class="line" />
     </div>
     <fund
         *ngFor="let fund of funds"
-        [label]="fund.label"
+        [name]="fund.name"
         [spentAmount]="fund.spentAmount"
         [budgetedAmount]="fund.budgetedAmount"
     >

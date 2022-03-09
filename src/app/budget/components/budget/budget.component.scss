@@ -1,8 +1,6 @@
-@import "variables";
+@import "mixins";
 
 .budget-container {
-    display: flex;
-    flex-direction: column;
+    @include vertical-screen-container;
     gap: $spacing-large;
-    padding: $spacing-medium;
 }

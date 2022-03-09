@@ -1,7 +1,7 @@
 <div class="expenses-container">
     <expense
         *ngFor="let expense of expenses"
-        [label]="expense.label"
+        [name]="expense.name"
         [date]="expense.date"
         [cost]="expense.cost"
     >

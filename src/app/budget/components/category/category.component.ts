@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { Fund } from "src/shared/models/fund.model";
+import { Fund } from "src/shared/models/frontend/fund.model";
 
 @Component({
     selector: "category",
@@ -7,6 +7,6 @@ import { Fund } from "src/shared/models/fund.model";
     styleUrls: ["./category.component.scss"]
 })
 export class CategoryComponent {
-    @Input() label: string;
+    @Input() name: string;
     @Input() funds: Fund[];
 }

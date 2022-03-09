@@ -1,8 +1,6 @@
-@import "variables";
+@import "mixins";
 
 .expenses-container {
-    display: flex;
-    flex-direction: column;
+    @include vertical-screen-container;
     gap: $spacing-small;
-    padding: $spacing-medium;
 }

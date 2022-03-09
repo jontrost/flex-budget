@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
 
-import { Category } from "../models/category.model";
-import { Expense } from "../models/expense.model";
+import { FundApiData } from "../models/api/fund-api-data.model";
+import { Category } from "../models/frontend/category.model";
+import { Expense } from "../models/frontend/expense.model";
 
 @Injectable({
     providedIn: "root"
@@ -10,26 +11,26 @@ export class ApiService {
     getCategories(): Category[] {
         return [
             {
-                label: "Category 1",
+                name: "Category 1",
                 funds: [
                     {
                         budgetedAmount: 150,
-                        label: "label",
+                        name: "name",
                         spentAmount: 50
                     }
                 ]
             },
             {
-                label: "Category 2",
+                name: "Category 2",
                 funds: [
                     {
                         budgetedAmount: 150,
-                        label: "label",
+                        name: "name",
                         spentAmount: 50
                     },
                     {
                         budgetedAmount: 100,
-                        label: "label",
+                        name: "name",
                         spentAmount: 50
                     }
                 ]
@@ -37,18 +38,26 @@ export class ApiService {
         ];
     }
 
+    getCategoryNames(): string[] {
+        return ["Category 1", "Category 2", "Category 3"];
+    }
+
     getExpenses(): Expense[] {
         return [
             {
                 cost: 50,
                 date: new Date(),
-                label: "label 1"
+                name: "name1"
             },
             {
                 cost: 150,
                 date: new Date(),
-                label: "label 2"
+                name: "name2"
             }
         ];
+    }
+
+    createFund(fundApiData: FundApiData): void {
+        console.log(fundApiData);
     }
 }

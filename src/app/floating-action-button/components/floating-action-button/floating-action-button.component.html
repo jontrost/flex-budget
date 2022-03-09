@@ -12,7 +12,14 @@
     <button *ngIf="isOpen" [@fade] id="create-expense" class="create-expense-mini-fab" mat-mini-fab>
         <mat-icon>payments</mat-icon>
     </button>
-    <button *ngIf="isOpen" [@fade] id="create-fund" class="create-fund-mini-fab" mat-mini-fab>
+    <button
+        *ngIf="isOpen"
+        [@fade]
+        routerLink="fund-editor"
+        id="create-fund"
+        class="create-fund-mini-fab"
+        mat-mini-fab
+    >
         <mat-icon>savings</mat-icon>
     </button>
     <button

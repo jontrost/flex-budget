@@ -5,6 +5,10 @@ const routes: Routes = [
     {
         path: "",
         loadChildren: () => import("./main-view/main-view.module").then((m) => m.MainViewModule)
+    },
+    {
+        path: "fund-editor",
+        loadChildren: () => import("./editor/editor.module").then((m) => m.EditorModule)
     }
 ];
 

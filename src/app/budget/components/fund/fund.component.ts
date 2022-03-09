@@ -6,7 +6,7 @@ import { Component, Input } from "@angular/core";
     styleUrls: ["./fund.component.scss"]
 })
 export class FundComponent {
-    @Input() label: string;
+    @Input() name: string;
     @Input() budgetedAmount: number;
     @Input() spentAmount: number;
 }

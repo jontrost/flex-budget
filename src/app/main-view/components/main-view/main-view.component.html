@@ -1,17 +1,15 @@
-<div class="main-grid-layout">
-    <mat-tab-group mat-stretch-tabs class="tabs-layout" backgroundColor="primary">
-        <mat-tab>
-            <ng-template mat-tab-label>
-                <span class="mat-display-1 tabs-label">Budget</span>
-            </ng-template>
-            <budget [categories]="sampleCategories"></budget>
-        </mat-tab>
-        <mat-tab>
-            <ng-template mat-tab-label>
-                <span class="mat-display-1 tabs-label">Expenses</span>
-            </ng-template>
-            <expenses [expenses]="sampleExpenses"></expenses>
-        </mat-tab>
-    </mat-tab-group>
-</div>
+<mat-tab-group mat-stretch-tabs backgroundColor="primary">
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <span class="mat-display-1 tabs-label">Budget</span>
+        </ng-template>
+        <budget [categories]="sampleCategories"></budget>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <span class="mat-display-1 tabs-label">Expenses</span>
+        </ng-template>
+        <expenses [expenses]="sampleExpenses"></expenses>
+    </mat-tab>
+</mat-tab-group>
 <floating-action-button></floating-action-button>

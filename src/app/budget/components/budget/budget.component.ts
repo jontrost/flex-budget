@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { Category } from "src/shared/models/category.model";
+import { Category } from "src/shared/models/frontend/category.model";
 
 @Component({
     selector: "budget",

@@ -1,5 +1,5 @@
 export interface Fund {
     budgetedAmount: number;
-    label: string;
+    name: string;
     spentAmount: number;
 }

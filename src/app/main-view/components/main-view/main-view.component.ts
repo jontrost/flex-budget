@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { Category } from "src/shared/models/category.model";
-import { Expense } from "src/shared/models/expense.model";
+import { Category } from "src/shared/models/frontend/category.model";
+import { Expense } from "src/shared/models/frontend/expense.model";
 import { ApiService } from "src/shared/services/api.service";
 
 @Component({
