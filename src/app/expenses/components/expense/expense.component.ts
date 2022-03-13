@@ -7,6 +7,6 @@ import { Component, Input } from "@angular/core";
 })
 export class ExpenseComponent {
     @Input() name: string;
-    @Input() date: Date;
+    @Input() date: string;
     @Input() cost: number;
 }

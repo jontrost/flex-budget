@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { FundApiData } from "src/shared/models/api/fund-api-data.model";
+import { Observable } from "rxjs";
 import { ApiService } from "src/shared/services/api.service";
 
 @Component({
@@ -10,7 +10,7 @@ import { ApiService } from "src/shared/services/api.service";
 })
 export class FundEditorComponent implements OnInit {
     formGroup: FormGroup;
-    categoryNames: string[];
+    categoryNames: Observable<string[]>;
 
     constructor(private apiService: ApiService) {}
 
@@ -24,11 +24,10 @@ export class FundEditorComponent implements OnInit {
     }
 
     saveData(): void {
-        const fundApiData: FundApiData = {
-            budgetedAmount: this.formGroup.get("budgetedAmount")?.value,
-            categoryName: this.formGroup.get("categoryName")?.value,
-            name: this.formGroup.get("name")?.value
-        };
-        this.apiService.createFund(fundApiData);
+        this.apiService.createFund(
+            this.formGroup.get("budgetedAmount")?.value,
+            this.formGroup.get("categoryName")?.value,
+            this.formGroup.get("name")?.value
+        );
     }
 }

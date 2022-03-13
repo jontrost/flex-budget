@@ -1,6 +1,6 @@
 <div class="expenses-container">
     <expense
-        *ngFor="let expense of expenses"
+        *ngFor="let expense of expenses | async"
         [name]="expense.name"
         [date]="expense.date"
         [cost]="expense.cost"

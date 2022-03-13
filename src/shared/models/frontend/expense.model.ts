@@ -1,5 +1,5 @@
 export interface Expense {
     cost: number;
-    date: Date;
+    date: string;
     name: string;
 }
