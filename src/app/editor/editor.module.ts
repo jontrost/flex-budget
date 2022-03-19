@@ -6,11 +6,12 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
 
+import { CategoryEditorComponent } from "./components/category-editor/category-editor.component";
 import { FundEditorComponent } from "./components/fund-editor/fund-editor.component";
 import { EditorRoutingModule } from "./editor-routing.module";
 
 @NgModule({
-    declarations: [FundEditorComponent],
+    declarations: [FundEditorComponent, CategoryEditorComponent],
     imports: [
         CommonModule,
         EditorRoutingModule,

@@ -1,6 +1,6 @@
 import { Fund } from "./fund.model";
 
 export interface Category {
-    funds: Fund[];
+    funds?: Fund[];
     name: string;
 }

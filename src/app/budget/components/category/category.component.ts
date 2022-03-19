@@ -8,5 +8,5 @@ import { Fund } from "src/shared/models/frontend/fund.model";
 })
 export class CategoryComponent {
     @Input() name: string;
-    @Input() funds: Fund[];
+    @Input() funds?: Fund[];
 }

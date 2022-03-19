@@ -1,0 +1,11 @@
+@import "mixins";
+
+.category-editor-container {
+    @include vertical-screen-container;
+    gap: $spacing-medium;
+}
+
+.save-button {
+    width: 25%;
+    align-self: center;
+}
