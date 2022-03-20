@@ -3,7 +3,7 @@ import { FormControl, Validators } from "@angular/forms";
 import { ApiService } from "src/shared/services/api.service";
 
 @Component({
-    selector: "app-category-editor",
+    selector: "category-editor",
     templateUrl: "./category-editor.component.html",
     styleUrls: ["./category-editor.component.scss"]
 })

@@ -1,11 +1,2 @@
 @import "mixins";
-
-.fund-editor-container {
-    @include vertical-screen-container;
-    gap: $spacing-medium;
-}
-
-.save-button {
-    width: 25%;
-    align-self: center;
-}
+@include editor;

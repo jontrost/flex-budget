@@ -4,16 +4,14 @@
         <input matInput formControlName="name" />
     </mat-form-field>
     <mat-form-field appearance="outline">
-        <mat-label>Amount</mat-label>
-        <input matInput type="number" formControlName="budgetedAmount" />
+        <mat-label>Cost</mat-label>
+        <input matInput type="number" formControlName="cost" />
     </mat-form-field>
     <mat-form-field appearance="outline">
-        <mat-label>Category</mat-label>
-        <mat-select formControlName="categoryName">
-            <mat-option *ngFor="let categoryName of categoryNames | async" [value]="categoryName">
-                {{ categoryName }}
-            </mat-option>
-        </mat-select>
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="expenseDate" formControlName="date" />
+        <mat-datepicker-toggle matSuffix [for]="expenseDate"></mat-datepicker-toggle>
+        <mat-datepicker #expenseDate></mat-datepicker>
     </mat-form-field>
     <button
         mat-flat-button

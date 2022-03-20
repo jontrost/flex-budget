@@ -9,7 +9,14 @@
     <button [@isOpenChange]="isOpen" class="main-fab" mat-fab (click)="toggleFab()">
         <mat-icon>add</mat-icon>
     </button>
-    <button *ngIf="isOpen" [@fade] id="create-expense" class="create-expense-mini-fab" mat-mini-fab>
+    <button
+        *ngIf="isOpen"
+        [@fade]
+        routerLink="create/expense"
+        id="create-expense"
+        class="create-expense-mini-fab"
+        mat-mini-fab
+    >
         <mat-icon>payments</mat-icon>
     </button>
     <button

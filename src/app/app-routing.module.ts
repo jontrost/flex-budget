@@ -11,10 +11,6 @@ const routes: Routes = [
         loadChildren: () => import("./editor/editor.module").then((m) => m.EditorModule)
     },
     {
-        path: "create",
-        loadChildren: () => import("./editor/editor.module").then((m) => m.EditorModule)
-    },
-    {
         path: "**",
         redirectTo: ""
     }

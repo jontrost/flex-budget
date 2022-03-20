@@ -27,3 +27,15 @@
     flex-direction: column;
     padding: $spacing-medium;
 }
+
+@mixin editor {
+    .editor-container {
+        @include vertical-screen-container;
+        gap: $spacing-medium;
+    }
+
+    .save-button {
+        width: 25%;
+        align-self: center;
+    }
+}
