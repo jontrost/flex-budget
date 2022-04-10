@@ -1,5 +1,5 @@
-import { Fund } from "../frontend/fund.model";
+import { Category } from "../frontend/category.model";
 
 export interface CreateFundResponse {
-    createFund: Fund;
+    createFund: Category;
 }

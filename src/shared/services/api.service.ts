@@ -7,7 +7,6 @@ import { CREATE_CATEGORY_MUTATION } from "../constants/mutations/create-category
 import { CREATE_EXPENSE_MUTATION } from "../constants/mutations/create-expense-mutation";
 import { CREATE_FUND_MUTATION } from "../constants/mutations/create-fund-mutation";
 import { GET_CATEGORIES_QUERY } from "../constants/queries/get-categories-query";
-import { GET_CATEGORY_NAMES_QUERY } from "../constants/queries/get-category-names-query";
 import { GET_EXPENSES_QUERY } from "../constants/queries/get-expenses-query";
 import { CategoriesResponse } from "../models/api/categories-response.model";
 import { CreateCategoryResponse } from "../models/api/create-category-response.model";
@@ -29,16 +28,6 @@ export class ApiService {
                 query: GET_CATEGORIES_QUERY
             })
             .valueChanges.pipe(map((response) => response.data.categories));
-    }
-
-    getCategoryNames(): Observable<string[]> {
-        return this.apollo
-            .watchQuery<CategoriesResponse>({
-                query: GET_CATEGORY_NAMES_QUERY
-            })
-            .valueChanges.pipe(
-                map((response) => response.data.categories.map((category) => category.name))
-            );
     }
 
     getExpenses(): Observable<Expense[]> {
@@ -87,13 +76,13 @@ export class ApiService {
             });
     }
 
-    createFund(budgetedAmount: number, categoryName: string, name: string): void {
+    createFund(budgetedAmount: number, categoryId: string, name: string): void {
         this.apollo
             .mutate<CreateFundResponse>({
                 mutation: CREATE_FUND_MUTATION,
                 variables: {
                     budgetedAmount,
-                    categoryName,
+                    categoryId,
                     name
                 }
             })
