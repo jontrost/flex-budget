@@ -41,6 +41,11 @@ body {
     font-family: "Varela Round", sans-serif;
 }
 
+a {
+    all: unset;
+    cursor: pointer;
+}
+
 /* ------------------------------------------------------------------------- */
 /*                    Global Angular Material Overrides                      */
 /* ------------------------------------------------------------------------- */

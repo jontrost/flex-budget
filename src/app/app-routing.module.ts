@@ -11,6 +11,10 @@ const routes: Routes = [
         loadChildren: () => import("./editor/editor.module").then((m) => m.EditorModule)
     },
     {
+        path: "edit",
+        loadChildren: () => import("./editor/editor.module").then((m) => m.EditorModule)
+    },
+    {
         path: "**",
         redirectTo: ""
     }

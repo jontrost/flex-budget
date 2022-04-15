@@ -17,6 +17,11 @@ const routes: Routes = [
         component: ExpenseEditorComponent
     },
     {
+        path: "expense/:_id",
+        pathMatch: "full",
+        component: ExpenseEditorComponent
+    },
+    {
         path: "fund",
         pathMatch: "full",
         component: FundEditorComponent

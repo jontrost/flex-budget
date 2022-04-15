@@ -1,7 +1,7 @@
-<div class="expense-container">
+<a class="expense-container" [routerLink]="['edit/expense/', _id]">
     <div class="left-section">
         <span>{{ date }}</span>
         <span>{{ name }}</span>
     </div>
     <span>${{ cost }}</span>
-</div>
+</a>
