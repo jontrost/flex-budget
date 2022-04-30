@@ -1,4 +1,4 @@
-import { Expense } from "../frontend/expense.model";
+import { Expense } from "../../frontend/expense.model";
 
 export interface CreateExpenseResponse {
     createExpense: Expense;

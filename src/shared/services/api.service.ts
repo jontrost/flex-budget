@@ -6,17 +6,22 @@ import { map } from "rxjs/operators";
 import { CREATE_CATEGORY_MUTATION } from "../constants/mutations/create-category-mutation";
 import { CREATE_EXPENSE_MUTATION } from "../constants/mutations/create-expense-mutation";
 import { CREATE_FUND_MUTATION } from "../constants/mutations/create-fund-mutation";
+import { UPDATE_CATEGORY_MUTATION } from "../constants/mutations/update-category-mutation";
 import { UPDATE_EXPENSE_MUTATION } from "../constants/mutations/update-expense-mutation";
 import { GET_CATEGORIES_QUERY } from "../constants/queries/get-categories-query";
+import { GET_CATEGORY_BY_ID_QUERY } from "../constants/queries/get-category-by-id-query";
 import { GET_EXPENSE_BY_ID_QUERY } from "../constants/queries/get-expense-by-id-query";
 import { GET_EXPENSES_QUERY } from "../constants/queries/get-expenses-query";
-import { CategoriesResponse } from "../models/api/categories-response.model";
-import { CreateCategoryResponse } from "../models/api/create-category-response.model";
-import { CreateExpenseResponse } from "../models/api/create-expense-response.model";
-import { CreateFundResponse } from "../models/api/create-fund-response.model";
-import { ExpenseResponse } from "../models/api/expense-response-model";
-import { ExpensesResponse } from "../models/api/expenses-response.model";
-import { UpdateExpenseResponse } from "../models/api/update-expense-response.model";
+import { CategoryPayload } from "../models/api/payloads/category-payload.model";
+import { CreateCategoryResponse } from "../models/api/responses/create-category-response.model";
+import { CreateExpenseResponse } from "../models/api/responses/create-expense-response.model";
+import { CreateFundResponse } from "../models/api/responses/create-fund-response.model";
+import { GetCategoriesResponse } from "../models/api/responses/get-categories-response.model";
+import { GetCategoryResponse } from "../models/api/responses/get-category-response.model";
+import { GetExpenseResponse } from "../models/api/responses/get-expense-response-model";
+import { GetExpensesResponse } from "../models/api/responses/get-expenses-response.model";
+import { UpdateCategoryResponse } from "../models/api/responses/update-category-response.model";
+import { UpdateExpenseResponse } from "../models/api/responses/update-expense-response.model";
 import { Category } from "../models/frontend/category.model";
 import { Expense } from "../models/frontend/expense.model";
 
@@ -28,26 +33,37 @@ export class ApiService {
 
     getCategories(): Observable<Category[]> {
         return this.apollo
-            .watchQuery<CategoriesResponse>({
+            .watchQuery<GetCategoriesResponse>({
                 query: GET_CATEGORIES_QUERY
             })
             .valueChanges.pipe(map((response) => response.data.categories));
     }
 
+    getCategoryById(_id: string): Observable<Category> {
+        return this.apollo
+            .watchQuery<GetCategoryResponse>({
+                query: GET_CATEGORY_BY_ID_QUERY,
+                variables: {
+                    _id
+                }
+            })
+            .valueChanges.pipe(map((response) => response.data.category));
+    }
+
     getExpenses(): Observable<Expense[]> {
         return this.apollo
-            .watchQuery<ExpensesResponse>({
+            .watchQuery<GetExpensesResponse>({
                 query: GET_EXPENSES_QUERY
             })
             .valueChanges.pipe(map((response) => response.data.expenses));
     }
 
-    getExpenseById(id: string): Observable<Expense> {
+    getExpenseById(_id: string): Observable<Expense> {
         return this.apollo
-            .watchQuery<ExpenseResponse>({
+            .watchQuery<GetExpenseResponse>({
                 query: GET_EXPENSE_BY_ID_QUERY,
                 variables: {
-                    id
+                    _id
                 }
             })
             .valueChanges.pipe(map((response) => response.data.expense));
@@ -62,9 +78,6 @@ export class ApiService {
                 }
             })
             .subscribe({
-                next: ({ data }) => {
-                    console.log(data?.createCategory);
-                },
                 error: (error) => {
                     console.log("An error occurred: ", error);
                 }
@@ -82,9 +95,6 @@ export class ApiService {
                 }
             })
             .subscribe({
-                next: ({ data }) => {
-                    console.log(data?.createExpense);
-                },
                 error: (error) => {
                     console.log("An error occurred: ", error);
                 }
@@ -102,30 +112,42 @@ export class ApiService {
                 }
             })
             .subscribe({
-                next: ({ data }) => {
-                    console.log(data?.createFund);
-                },
                 error: (error) => {
                     console.log("An error occurred: ", error);
                 }
             });
     }
 
-    updateExpense(id: string, cost: number, date: string, name: string): void {
+    updateExpense(_id: string, cost: number, date: string, name: string): void {
         this.apollo
             .mutate<UpdateExpenseResponse>({
                 mutation: UPDATE_EXPENSE_MUTATION,
                 variables: {
-                    id,
+                    _id,
                     cost,
                     date,
                     name
                 }
             })
             .subscribe({
-                next: ({ data }) => {
-                    console.log(data?.updateExpense);
-                },
+                error: (error) => {
+                    console.log("An error occurred: ", error);
+                }
+            });
+    }
+
+    updateCategory(_id: string, category: CategoryPayload): void {
+        const { name, funds } = category;
+        this.apollo
+            .mutate<UpdateCategoryResponse>({
+                mutation: UPDATE_CATEGORY_MUTATION,
+                variables: {
+                    _id,
+                    name,
+                    funds
+                }
+            })
+            .subscribe({
                 error: (error) => {
                     console.log("An error occurred: ", error);
                 }

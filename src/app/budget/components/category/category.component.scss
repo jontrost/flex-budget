@@ -6,8 +6,18 @@
     gap: $spacing-small;
 }
 
-.label {
+.header {
     margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edit-button {
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .line {

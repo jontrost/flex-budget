@@ -1,6 +1,7 @@
 <div class="budget-container">
     <category
         *ngFor="let category of categories | async"
+        [_id]="category._id"
         [name]="category.name"
         [funds]="category.funds"
     >

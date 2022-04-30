@@ -7,6 +7,7 @@ import { Fund } from "src/shared/models/frontend/fund.model";
     styleUrls: ["./category.component.scss"]
 })
 export class CategoryComponent {
+    @Input() _id: string;
     @Input() name: string;
     @Input() funds?: Fund[];
 }

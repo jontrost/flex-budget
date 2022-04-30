@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
+import { ActivatedRoute } from "@angular/router";
+import { firstValueFrom } from "rxjs";
 import { ApiService } from "src/shared/services/api.service";
 
 @Component({
@@ -9,14 +11,25 @@ import { ApiService } from "src/shared/services/api.service";
 })
 export class CategoryEditorComponent implements OnInit {
     name: FormControl;
+    _id: string | null;
 
-    constructor(private apiService: ApiService) {}
+    constructor(private apiService: ApiService, private route: ActivatedRoute) {}
 
-    ngOnInit(): void {
-        this.name = new FormControl(null, Validators.required);
+    async ngOnInit(): Promise<void> {
+        this._id = this.route.snapshot.paramMap.get("_id");
+        if (this._id != null) {
+            const { name } = await firstValueFrom(this.apiService.getCategoryById(this._id));
+            this.name = new FormControl(name, Validators.required);
+        } else {
+            this.name = new FormControl(null, Validators.required);
+        }
     }
 
     saveData(): void {
-        this.apiService.createCategory(this.name.value);
+        if (this._id != null) {
+            this.apiService.updateCategory(this._id, { name: this.name.value });
+        } else {
+            this.apiService.createCategory(this.name.value);
+        }
     }
 }

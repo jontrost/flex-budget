@@ -12,6 +12,11 @@ const routes: Routes = [
         component: CategoryEditorComponent
     },
     {
+        path: "category/:_id",
+        pathMatch: "full",
+        component: CategoryEditorComponent
+    },
+    {
         path: "expense",
         pathMatch: "full",
         component: ExpenseEditorComponent

@@ -1,6 +1,17 @@
 <div class="category-container">
-    <div class="label mat-h1">
-        {{ name }}
+    <div>
+        <div class="header mat-h1">
+            {{ name }}
+            <button
+                mat-icon-button
+                color="primary"
+                aria-label="Edit Category"
+                class="edit-button"
+                [routerLink]="['edit/category/', _id]"
+            >
+                <mat-icon>edit</mat-icon>
+            </button>
+        </div>
         <hr class="line" />
     </div>
     <fund
