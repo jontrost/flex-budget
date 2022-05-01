@@ -25,10 +25,9 @@ export class FundEditorComponent implements OnInit {
     }
 
     saveData(): void {
-        this.apiService.createFund(
-            this.formGroup.get("budgetedAmount")?.value,
-            this.formGroup.get("categoryId")?.value,
-            this.formGroup.get("name")?.value
-        );
+        this.apiService.createFund(this.formGroup.get("categoryId")?.value, {
+            budgetedAmount: this.formGroup.get("budgetedAmount")?.value,
+            name: this.formGroup.get("name")?.value
+        });
     }
 }

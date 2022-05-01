@@ -13,6 +13,8 @@ import { GET_CATEGORY_BY_ID_QUERY } from "../constants/queries/get-category-by-i
 import { GET_EXPENSE_BY_ID_QUERY } from "../constants/queries/get-expense-by-id-query";
 import { GET_EXPENSES_QUERY } from "../constants/queries/get-expenses-query";
 import { CategoryPayload } from "../models/api/payloads/category-payload.model";
+import { ExpensePayload } from "../models/api/payloads/expense-payload.model";
+import { FundPayload } from "../models/api/payloads/fund-payload.model";
 import { CreateCategoryResponse } from "../models/api/responses/create-category-response.model";
 import { CreateExpenseResponse } from "../models/api/responses/create-expense-response.model";
 import { CreateFundResponse } from "../models/api/responses/create-fund-response.model";
@@ -69,7 +71,8 @@ export class ApiService {
             .valueChanges.pipe(map((response) => response.data.expense));
     }
 
-    createCategory(name: string): void {
+    createCategory(category: CategoryPayload): void {
+        const { name } = category;
         this.apollo
             .mutate<CreateCategoryResponse>({
                 mutation: CREATE_CATEGORY_MUTATION,
@@ -84,7 +87,8 @@ export class ApiService {
             });
     }
 
-    createExpense(cost: number, date: string, name: string): void {
+    createExpense(expense: ExpensePayload): void {
+        const { cost, date, name } = expense;
         this.apollo
             .mutate<CreateExpenseResponse>({
                 mutation: CREATE_EXPENSE_MUTATION,
@@ -101,7 +105,8 @@ export class ApiService {
             });
     }
 
-    createFund(budgetedAmount: number, categoryId: string, name: string): void {
+    createFund(categoryId: string, fund: FundPayload): void {
+        const { budgetedAmount, name } = fund;
         this.apollo
             .mutate<CreateFundResponse>({
                 mutation: CREATE_FUND_MUTATION,
@@ -118,7 +123,8 @@ export class ApiService {
             });
     }
 
-    updateExpense(_id: string, cost: number, date: string, name: string): void {
+    updateExpense(_id: string, expense: ExpensePayload): void {
+        const { cost, date, name } = expense;
         this.apollo
             .mutate<UpdateExpenseResponse>({
                 mutation: UPDATE_EXPENSE_MUTATION,

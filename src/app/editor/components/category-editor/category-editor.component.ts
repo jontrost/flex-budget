@@ -29,7 +29,7 @@ export class CategoryEditorComponent implements OnInit {
         if (this._id != null) {
             this.apiService.updateCategory(this._id, { name: this.name.value });
         } else {
-            this.apiService.createCategory(this.name.value);
+            this.apiService.createCategory({ name: this.name.value });
         }
     }
 }

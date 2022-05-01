@@ -37,18 +37,17 @@ export class ExpenseEditorComponent implements OnInit {
 
     saveData(): void {
         if (this._id != null) {
-            this.apiService.updateExpense(
-                this._id,
-                this.formGroup.get("cost")?.value,
-                this.formGroup.get("date")?.value,
-                this.formGroup.get("name")?.value
-            );
+            this.apiService.updateExpense(this._id, {
+                cost: this.formGroup.get("cost")?.value,
+                date: this.formGroup.get("date")?.value,
+                name: this.formGroup.get("name")?.value
+            });
         } else {
-            this.apiService.createExpense(
-                this.formGroup.get("cost")?.value,
-                this.formGroup.get("date")?.value,
-                this.formGroup.get("name")?.value
-            );
+            this.apiService.createExpense({
+                cost: this.formGroup.get("cost")?.value,
+                date: this.formGroup.get("date")?.value,
+                name: this.formGroup.get("name")?.value
+            });
         }
     }
 }
