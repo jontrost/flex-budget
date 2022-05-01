@@ -3,27 +3,31 @@ import { Apollo } from "apollo-angular";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 
-import { CREATE_CATEGORY_MUTATION } from "../constants/mutations/create-category-mutation";
-import { CREATE_EXPENSE_MUTATION } from "../constants/mutations/create-expense-mutation";
-import { CREATE_FUND_MUTATION } from "../constants/mutations/create-fund-mutation";
-import { UPDATE_CATEGORY_MUTATION } from "../constants/mutations/update-category-mutation";
-import { UPDATE_EXPENSE_MUTATION } from "../constants/mutations/update-expense-mutation";
-import { GET_CATEGORIES_QUERY } from "../constants/queries/get-categories-query";
-import { GET_CATEGORY_BY_ID_QUERY } from "../constants/queries/get-category-by-id-query";
-import { GET_EXPENSE_BY_ID_QUERY } from "../constants/queries/get-expense-by-id-query";
-import { GET_EXPENSES_QUERY } from "../constants/queries/get-expenses-query";
-import { CategoryPayload } from "../models/api/payloads/category-payload.model";
-import { ExpensePayload } from "../models/api/payloads/expense-payload.model";
-import { FundPayload } from "../models/api/payloads/fund-payload.model";
-import { CreateCategoryResponse } from "../models/api/responses/create-category-response.model";
-import { CreateExpenseResponse } from "../models/api/responses/create-expense-response.model";
-import { CreateFundResponse } from "../models/api/responses/create-fund-response.model";
-import { GetCategoriesResponse } from "../models/api/responses/get-categories-response.model";
-import { GetCategoryResponse } from "../models/api/responses/get-category-response.model";
-import { GetExpenseResponse } from "../models/api/responses/get-expense-response-model";
-import { GetExpensesResponse } from "../models/api/responses/get-expenses-response.model";
-import { UpdateCategoryResponse } from "../models/api/responses/update-category-response.model";
-import { UpdateExpenseResponse } from "../models/api/responses/update-expense-response.model";
+import {
+    CREATE_CATEGORY_MUTATION,
+    CREATE_EXPENSE_MUTATION,
+    CREATE_FUND_MUTATION,
+    UPDATE_CATEGORY_MUTATION,
+    UPDATE_EXPENSE_MUTATION
+} from "../constants/mutations";
+import {
+    GET_CATEGORIES_QUERY,
+    GET_CATEGORY_BY_ID_QUERY,
+    GET_EXPENSE_BY_ID_QUERY,
+    GET_EXPENSES_QUERY
+} from "../constants/queries";
+import { CategoryPayload, ExpensePayload, FundPayload } from "../models/api/payloads";
+import {
+    CreateCategoryResponse,
+    CreateExpenseResponse,
+    CreateFundResponse,
+    GetCategoriesResponse,
+    GetCategoryResponse,
+    GetExpenseResponse,
+    GetExpensesResponse,
+    UpdateCategoryResponse,
+    UpdateExpenseResponse
+} from "../models/api/responses";
 import { Category } from "../models/frontend/category.model";
 import { Expense } from "../models/frontend/expense.model";
 
