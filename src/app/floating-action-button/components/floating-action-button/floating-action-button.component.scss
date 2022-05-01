@@ -16,39 +16,47 @@
         ".              main";
     justify-items: center;
     align-items: center;
+    pointer-events: none;
 }
 
 .main-fab {
     margin-top: $spacing-tiny;
     grid-area: main;
+    pointer-events: auto;
 }
 
 .create-category-mini-fab {
     grid-area: category;
+    pointer-events: auto;
 }
 
 .create-fund-mini-fab {
     grid-area: fund;
+    pointer-events: auto;
 }
 
 .create-expense-mini-fab {
     grid-area: expense;
+    pointer-events: auto;
 }
 
 .create-category-label {
     grid-area: category-label;
     justify-self: flex-end;
     margin-right: $spacing-tiny;
+    pointer-events: auto;
 }
 
 .create-fund-label {
     grid-area: fund-label;
     justify-self: flex-end;
     margin-right: $spacing-tiny;
+    pointer-events: auto;
 }
 
 .create-expense-label {
     grid-area: expense-label;
     justify-self: flex-end;
     margin-right: $spacing-tiny;
+    pointer-events: auto;
 }
