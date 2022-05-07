@@ -9,7 +9,6 @@ export const GET_CATEGORIES_QUERY = gql`
                 _id
                 budgetedAmount
                 name
-                spentAmount
             }
         }
     }
@@ -24,7 +23,6 @@ export const GET_CATEGORY_BY_ID_QUERY = gql`
                 _id
                 budgetedAmount
                 name
-                spentAmount
             }
         }
     }
@@ -47,6 +45,16 @@ export const GET_EXPENSES_QUERY = gql`
             _id
             cost
             date
+            name
+        }
+    }
+`;
+
+export const GET_FUND_BY_ID_QUERY = gql`
+    query Query($_id: ID!, $categoryId: ID!) {
+        fund(_id: $_id, categoryId: $categoryId) {
+            _id
+            budgetedAmount
             name
         }
     }

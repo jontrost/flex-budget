@@ -3,6 +3,7 @@
 
 .fund-container {
     @include card-sliver;
+    cursor: pointer;
 }
 
 .over-budget {

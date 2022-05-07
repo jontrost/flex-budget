@@ -1,2 +1,9 @@
 @import "mixins";
 @include editor;
+
+.progress-spinner {
+    @include vertical-screen-container;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}

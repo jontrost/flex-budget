@@ -9,7 +9,6 @@ export const CREATE_CATEGORY_MUTATION = gql`
                 _id
                 budgetedAmount
                 name
-                spentAmount
             }
         }
     }
@@ -35,7 +34,6 @@ export const CREATE_FUND_MUTATION = gql`
                 _id
                 budgetedAmount
                 name
-                spentAmount
             }
         }
     }
@@ -50,7 +48,6 @@ export const UPDATE_CATEGORY_MUTATION = gql`
                 _id
                 budgetedAmount
                 name
-                spentAmount
             }
         }
     }
@@ -63,6 +60,32 @@ export const UPDATE_EXPENSE_MUTATION = gql`
             cost
             date
             name
+        }
+    }
+`;
+
+export const UPDATE_FUND_MUTATION = gql`
+    mutation Mutation(
+        $_id: ID!
+        $currentCategoryId: ID!
+        $newCategoryId: ID!
+        $budgetedAmount: Float!
+        $name: String!
+    ) {
+        updateFund(
+            _id: $_id
+            currentCategoryId: $currentCategoryId
+            newCategoryId: $newCategoryId
+            budgetedAmount: $budgetedAmount
+            name: $name
+        ) {
+            _id
+            name
+            funds {
+                _id
+                budgetedAmount
+                name
+            }
         }
     }
 `;

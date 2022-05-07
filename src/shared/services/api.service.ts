@@ -8,13 +8,15 @@ import {
     CREATE_EXPENSE_MUTATION,
     CREATE_FUND_MUTATION,
     UPDATE_CATEGORY_MUTATION,
-    UPDATE_EXPENSE_MUTATION
+    UPDATE_EXPENSE_MUTATION,
+    UPDATE_FUND_MUTATION
 } from "../constants/mutations";
 import {
     GET_CATEGORIES_QUERY,
     GET_CATEGORY_BY_ID_QUERY,
     GET_EXPENSE_BY_ID_QUERY,
-    GET_EXPENSES_QUERY
+    GET_EXPENSES_QUERY,
+    GET_FUND_BY_ID_QUERY
 } from "../constants/queries";
 import { CategoryPayload, ExpensePayload, FundPayload } from "../models/api/payloads";
 import {
@@ -25,11 +27,14 @@ import {
     GetCategoryResponse,
     GetExpenseResponse,
     GetExpensesResponse,
+    GetFundResponse,
     UpdateCategoryResponse,
-    UpdateExpenseResponse
+    UpdateExpenseResponse,
+    UpdateFundResponse
 } from "../models/api/responses";
 import { Category } from "../models/frontend/category.model";
 import { Expense } from "../models/frontend/expense.model";
+import { Fund } from "../models/frontend/fund.model";
 
 @Injectable({
     providedIn: "root"
@@ -73,6 +78,18 @@ export class ApiService {
                 }
             })
             .valueChanges.pipe(map((response) => response.data.expense));
+    }
+
+    getFundById(_id: string, categoryId: string): Observable<Fund> {
+        return this.apollo
+            .watchQuery<GetFundResponse>({
+                query: GET_FUND_BY_ID_QUERY,
+                variables: {
+                    _id,
+                    categoryId
+                }
+            })
+            .valueChanges.pipe(map((response) => response.data.fund));
     }
 
     createCategory(category: CategoryPayload): void {
@@ -155,6 +172,26 @@ export class ApiService {
                     _id,
                     name,
                     funds
+                }
+            })
+            .subscribe({
+                error: (error) => {
+                    console.log("An error occurred: ", error);
+                }
+            });
+    }
+
+    updateFund(_id: string, currentCategoryId: string, newCategoryId: string, fund: FundPayload): void {
+        const { budgetedAmount, name } = fund;
+        this.apollo
+            .mutate<UpdateFundResponse>({
+                mutation: UPDATE_FUND_MUTATION,
+                variables: {
+                    _id,
+                    currentCategoryId,
+                    newCategoryId,
+                    budgetedAmount,
+                    name
                 }
             })
             .subscribe({

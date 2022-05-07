@@ -7,7 +7,8 @@
                 color="primary"
                 aria-label="Edit Category"
                 class="edit-button"
-                [routerLink]="['edit/category/', _id]"
+                routerLink="edit/category"
+                [state]="{ _id, name }"
             >
                 <mat-icon>edit</mat-icon>
             </button>
@@ -16,8 +17,10 @@
     </div>
     <fund
         *ngFor="let fund of funds"
+        [_id]="fund._id"
+        [categoryId]="_id"
         [name]="fund.name"
-        [spentAmount]="fund.spentAmount"
+        [spentAmount]="0"
         [budgetedAmount]="fund.budgetedAmount"
     >
     </fund>

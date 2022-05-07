@@ -1,9 +1,14 @@
-<div class="fund-container">
+<div
+    class="fund-container"
+    routerLink="edit/fund"
+    [state]="{ _id, categoryId, name, budgetedAmount }"
+    role="button"
+    aria-label="Edit Fund"
+    (keydown.enter)="navigateToEditFund()"
+>
     <span>{{ name }}</span>
     <div>
-        <span [ngClass]="spentAmount - budgetedAmount > 0 ? 'over-budget' : 'within-budget'">
-            ${{ spentAmount }}
-        </span>
+        <span [ngClass]="spentAmount - budgetedAmount > 0 ? 'over-budget' : 'within-budget'"> ${{ spentAmount }} </span>
         <span> / </span>
         <span>${{ budgetedAmount }}</span>
     </div>

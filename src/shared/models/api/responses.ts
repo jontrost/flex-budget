@@ -1,5 +1,6 @@
 import { Category } from "../frontend/category.model";
 import { Expense } from "../frontend/expense.model";
+import { Fund } from "../frontend/fund.model";
 
 export interface CreateCategoryResponse {
     createCategory: Category;
@@ -29,10 +30,18 @@ export interface GetExpensesResponse {
     expenses: Expense[];
 }
 
+export interface GetFundResponse {
+    fund: Fund;
+}
+
 export interface UpdateCategoryResponse {
     updateCategory: Category;
 }
 
 export interface UpdateExpenseResponse {
     updateExpense: Expense;
+}
+
+export interface UpdateFundResponse {
+    updateFund: Category;
 }

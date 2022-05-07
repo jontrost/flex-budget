@@ -1,4 +1,4 @@
-<a class="expense-container" [routerLink]="['edit/expense/', _id]">
+<a class="expense-container" routerLink="edit/expense/" [state]="{ _id, name, date, cost }">
     <div class="left-section">
         <span>{{ date }}</span>
         <span>{{ name }}</span>

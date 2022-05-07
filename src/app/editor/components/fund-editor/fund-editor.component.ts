@@ -15,19 +15,30 @@ export class FundEditorComponent implements OnInit {
 
     constructor(private apiService: ApiService) {}
 
-    ngOnInit(): void {
-        this.formGroup = new FormGroup({
-            budgetedAmount: new FormControl(null, Validators.required),
-            categoryId: new FormControl(null, Validators.required),
-            name: new FormControl(null, Validators.required)
-        });
+    async ngOnInit(): Promise<void> {
         this.categories = this.apiService.getCategories();
-    }
-
-    saveData(): void {
-        this.apiService.createFund(this.formGroup.get("categoryId")?.value, {
-            budgetedAmount: this.formGroup.get("budgetedAmount")?.value,
-            name: this.formGroup.get("name")?.value
+        this.formGroup = new FormGroup({
+            budgetedAmount: new FormControl(history.state.budgetedAmount, Validators.required),
+            categoryId: new FormControl(history.state.categoryId, Validators.required),
+            name: new FormControl(history.state.name, Validators.required)
         });
+    }
+    saveData(): void {
+        if (history.state._id != null) {
+            this.apiService.updateFund(
+                history.state._id,
+                history.state.categoryId,
+                this.formGroup.get("categoryId")?.value,
+                {
+                    budgetedAmount: this.formGroup.get("budgetedAmount")?.value,
+                    name: this.formGroup.get("name")?.value
+                }
+            );
+        } else {
+            this.apiService.createFund(this.formGroup.get("categoryId")?.value, {
+                budgetedAmount: this.formGroup.get("budgetedAmount")?.value,
+                name: this.formGroup.get("name")?.value
+            });
+        }
     }
 }

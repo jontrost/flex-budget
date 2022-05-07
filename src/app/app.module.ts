@@ -11,13 +11,7 @@ import { AppRoutingModule } from "./app-routing.module";
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [
-        ApolloModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        BrowserModule,
-        HttpClientModule
-    ],
+    imports: [ApolloModule, AppRoutingModule, BrowserAnimationsModule, BrowserModule, HttpClientModule],
     providers: [
         {
             provide: APOLLO_OPTIONS,

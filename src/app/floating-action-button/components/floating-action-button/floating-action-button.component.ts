@@ -7,10 +7,7 @@ import { Component } from "@angular/core";
     styleUrls: ["./floating-action-button.component.scss"],
     animations: [
         trigger("fade", [
-            transition(":enter", [
-                style({ opacity: 0 }),
-                animate("150ms ease", style({ opacity: 1 }))
-            ]),
+            transition(":enter", [style({ opacity: 0 }), animate("150ms ease", style({ opacity: 1 }))]),
             transition(":leave", animate("150ms ease", style({ opacity: 0 })))
         ]),
         trigger("isOpenChange", [

@@ -1,4 +1,4 @@
-<div class="editor-container" [formGroup]="formGroup">
+<div class="editor-container" [formGroup]="formGroup" *ngIf="formGroup != null; else loading">
     <mat-form-field appearance="outline">
         <mat-label>Name</mat-label>
         <input matInput formControlName="name" />
@@ -26,3 +26,9 @@
         Save
     </button>
 </div>
+
+<ng-template #loading>
+    <div class="progress-spinner">
+        <mat-progress-spinner color="primary" mode="indeterminate"></mat-progress-spinner>
+    </div>
+</ng-template>
