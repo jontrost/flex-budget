@@ -192,7 +192,12 @@ export class ApiService {
                     newCategoryId,
                     budgetedAmount,
                     name
-                }
+                },
+                refetchQueries: [
+                    {
+                        query: GET_CATEGORIES_QUERY
+                    }
+                ]
             })
             .subscribe({
                 error: (error) => {
