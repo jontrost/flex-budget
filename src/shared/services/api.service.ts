@@ -16,7 +16,8 @@ import {
     GET_CATEGORY_BY_ID_QUERY,
     GET_EXPENSE_BY_ID_QUERY,
     GET_EXPENSES_QUERY,
-    GET_FUND_BY_ID_QUERY
+    GET_FUND_BY_ID_QUERY,
+    GET_CATEGORIES_WITHOUT_FUNDS_QUERY
 } from "../constants/queries";
 import { CategoryPayload, ExpensePayload, FundPayload } from "../models/api/payloads";
 import {
@@ -59,6 +60,14 @@ export class ApiService {
                 }
             })
             .valueChanges.pipe(map((response) => response.data.category));
+    }
+
+    getCategoriesWithoutFunds(): Observable<Category[]> {
+        return this.apollo
+            .watchQuery<GetCategoriesResponse>({
+                query: GET_CATEGORIES_WITHOUT_FUNDS_QUERY
+            })
+            .valueChanges.pipe(map((response) => response.data.categories));
     }
 
     getExpenses(): Observable<Expense[]> {

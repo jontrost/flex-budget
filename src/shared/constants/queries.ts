@@ -28,6 +28,15 @@ export const GET_CATEGORY_BY_ID_QUERY = gql`
     }
 `;
 
+export const GET_CATEGORIES_WITHOUT_FUNDS_QUERY = gql`
+    query Query {
+        categories {
+            _id
+            name
+        }
+    }
+`;
+
 export const GET_EXPENSE_BY_ID_QUERY = gql`
     query Query($_id: ID!) {
         expense(_id: $_id) {

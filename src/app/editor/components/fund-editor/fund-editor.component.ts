@@ -16,7 +16,7 @@ export class FundEditorComponent implements OnInit {
     constructor(private apiService: ApiService) {}
 
     async ngOnInit(): Promise<void> {
-        this.categories = this.apiService.getCategories();
+        this.categories = this.apiService.getCategoriesWithoutFunds();
         this.formGroup = new FormGroup({
             budgetedAmount: new FormControl(history.state.budgetedAmount, Validators.required),
             categoryId: new FormControl(history.state.categoryId, Validators.required),
