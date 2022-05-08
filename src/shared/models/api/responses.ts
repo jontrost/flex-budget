@@ -26,8 +26,8 @@ export interface GetExpenseResponse {
     expense: Expense;
 }
 
-export interface GetExpensesResponse {
-    expenses: Expense[];
+export interface GetExpensesForFundResponse {
+    expensesForFund: Expense[];
 }
 
 export interface GetFundResponse {

@@ -48,9 +48,9 @@ export const GET_EXPENSE_BY_ID_QUERY = gql`
     }
 `;
 
-export const GET_EXPENSES_QUERY = gql`
-    query Query {
-        expenses {
+export const GET_EXPENSES_FOR_FUND_QUERY = gql`
+    query Query($categoryId: ID!, $fundId: ID!) {
+        expensesForFund(categoryId: $categoryId, fundId: $fundId) {
             _id
             cost
             date

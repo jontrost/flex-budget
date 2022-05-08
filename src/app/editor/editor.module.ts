@@ -9,6 +9,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatSelectModule } from "@angular/material/select";
 
+import { ExpensesModule } from "../expenses/expenses.module";
 import { CategoryEditorComponent } from "./components/category-editor/category-editor.component";
 import { ExpenseEditorComponent } from "./components/expense-editor/expense-editor.component";
 import { FundEditorComponent } from "./components/fund-editor/fund-editor.component";
@@ -19,6 +20,7 @@ import { EditorRoutingModule } from "./editor-routing.module";
     imports: [
         CommonModule,
         EditorRoutingModule,
+        ExpensesModule,
         MatButtonModule,
         MatDatepickerModule,
         MatFormFieldModule,

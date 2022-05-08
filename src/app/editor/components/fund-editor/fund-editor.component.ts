@@ -12,11 +12,15 @@ import { ApiService } from "src/shared/services/api.service";
 export class FundEditorComponent implements OnInit {
     formGroup: FormGroup;
     categories: Observable<Category[]>;
+    categoryId: string;
+    fundId: string;
 
     constructor(private apiService: ApiService) {}
 
     async ngOnInit(): Promise<void> {
         this.categories = this.apiService.getCategoriesWithoutFunds();
+        this.categoryId = history.state.categoryId;
+        this.fundId = history.state._id;
         this.formGroup = new FormGroup({
             budgetedAmount: new FormControl(history.state.budgetedAmount, Validators.required),
             categoryId: new FormControl(history.state.categoryId, Validators.required),

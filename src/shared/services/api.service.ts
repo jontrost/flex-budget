@@ -13,11 +13,11 @@ import {
 } from "../constants/mutations";
 import {
     GET_CATEGORIES_QUERY,
+    GET_CATEGORIES_WITHOUT_FUNDS_QUERY,
     GET_CATEGORY_BY_ID_QUERY,
     GET_EXPENSE_BY_ID_QUERY,
-    GET_EXPENSES_QUERY,
-    GET_FUND_BY_ID_QUERY,
-    GET_CATEGORIES_WITHOUT_FUNDS_QUERY
+    GET_EXPENSES_FOR_FUND_QUERY,
+    GET_FUND_BY_ID_QUERY
 } from "../constants/queries";
 import { CategoryPayload, ExpensePayload, FundPayload } from "../models/api/payloads";
 import {
@@ -27,7 +27,7 @@ import {
     GetCategoriesResponse,
     GetCategoryResponse,
     GetExpenseResponse,
-    GetExpensesResponse,
+    GetExpensesForFundResponse,
     GetFundResponse,
     UpdateCategoryResponse,
     UpdateExpenseResponse,
@@ -70,12 +70,16 @@ export class ApiService {
             .valueChanges.pipe(map((response) => response.data.categories));
     }
 
-    getExpenses(): Observable<Expense[]> {
+    getExpensesForFund(categoryId: string, fundId: string): Observable<Expense[]> {
         return this.apollo
-            .watchQuery<GetExpensesResponse>({
-                query: GET_EXPENSES_QUERY
+            .watchQuery<GetExpensesForFundResponse>({
+                query: GET_EXPENSES_FOR_FUND_QUERY,
+                variables: {
+                    categoryId,
+                    fundId
+                }
             })
-            .valueChanges.pipe(map((response) => response.data.expenses));
+            .valueChanges.pipe(map((response) => response.data.expensesForFund));
     }
 
     getExpenseById(_id: string): Observable<Expense> {

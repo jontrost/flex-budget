@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 import { Expense } from "src/shared/models/frontend/expense.model";
 import { ApiService } from "src/shared/services/api.service";
@@ -10,10 +10,12 @@ import { ApiService } from "src/shared/services/api.service";
 })
 export class ExpensesComponent implements OnInit {
     expenses: Observable<Expense[]>;
+    @Input() categoryId: string;
+    @Input() fundId: string;
 
     constructor(private apiService: ApiService) {}
 
     ngOnInit(): void {
-        this.expenses = this.apiService.getExpenses();
+        this.expenses = this.apiService.getExpensesForFund(this.categoryId, this.fundId);
     }
 }

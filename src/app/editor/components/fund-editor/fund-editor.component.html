@@ -25,6 +25,7 @@
     >
         Save
     </button>
+    <expenses *ngIf="categoryId != null && fundId != null" [categoryId]="categoryId" [fundId]="fundId"></expenses>
 </div>
 
 <ng-template #loading>

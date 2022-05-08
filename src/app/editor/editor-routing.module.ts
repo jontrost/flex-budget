@@ -12,17 +12,7 @@ const routes: Routes = [
         component: CategoryEditorComponent
     },
     {
-        path: "category/:_id",
-        pathMatch: "full",
-        component: CategoryEditorComponent
-    },
-    {
         path: "expense",
-        pathMatch: "full",
-        component: ExpenseEditorComponent
-    },
-    {
-        path: "expense/:_id",
         pathMatch: "full",
         component: ExpenseEditorComponent
     },
