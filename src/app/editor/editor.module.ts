@@ -9,18 +9,24 @@ import { MatInputModule } from "@angular/material/input";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatSelectModule } from "@angular/material/select";
 
-import { ExpensesModule } from "../expenses/expenses.module";
 import { CategoryEditorComponent } from "./components/category-editor/category-editor.component";
+import { ExpenseComponent } from "./components/expense/expense.component";
 import { ExpenseEditorComponent } from "./components/expense-editor/expense-editor.component";
+import { ExpensesComponent } from "./components/expenses/expenses.component";
 import { FundEditorComponent } from "./components/fund-editor/fund-editor.component";
 import { EditorRoutingModule } from "./editor-routing.module";
 
 @NgModule({
-    declarations: [FundEditorComponent, CategoryEditorComponent, ExpenseEditorComponent],
+    declarations: [
+        FundEditorComponent,
+        CategoryEditorComponent,
+        ExpenseEditorComponent,
+        ExpenseComponent,
+        ExpensesComponent
+    ],
     imports: [
         CommonModule,
         EditorRoutingModule,
-        ExpensesModule,
         MatButtonModule,
         MatDatepickerModule,
         MatFormFieldModule,
