@@ -1,6 +1,1 @@
-@import "mixins";
 
-.expenses-container {
-    @include vertical-screen-container;
-    gap: $spacing-small;
-}

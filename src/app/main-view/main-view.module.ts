@@ -1,6 +1,5 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { MatTabsModule } from "@angular/material/tabs";
 
 import { BudgetModule } from "../budget/budget.module";
 import { FloatingActionButtonModule } from "../floating-action-button/floating-action-button.module";
@@ -9,6 +8,6 @@ import { MainViewRoutingModule } from "./main-view-routing.module";
 
 @NgModule({
     declarations: [MainViewComponent],
-    imports: [CommonModule, BudgetModule, FloatingActionButtonModule, MatTabsModule, MainViewRoutingModule]
+    imports: [CommonModule, BudgetModule, FloatingActionButtonModule, MainViewRoutingModule]
 })
 export class MainViewModule {}
