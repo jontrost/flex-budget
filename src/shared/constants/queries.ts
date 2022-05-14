@@ -37,6 +37,19 @@ export const GET_CATEGORIES_WITHOUT_FUNDS_QUERY = gql`
     }
 `;
 
+export const GET_CATEGORIES_FOR_EXPENSE_EDITOR_DROPDOWN = gql`
+    query Query {
+        categories {
+            name
+            _id
+            funds {
+                _id
+                name
+            }
+        }
+    }
+`;
+
 export const GET_EXPENSE_BY_ID_QUERY = gql`
     query Query($_id: ID!) {
         expense(_id: $_id) {
@@ -64,6 +77,15 @@ export const GET_FUND_BY_ID_QUERY = gql`
         fund(_id: $_id, categoryId: $categoryId) {
             _id
             budgetedAmount
+            name
+        }
+    }
+`;
+
+export const GET_FUNDS_WITHOUT_EXPENSES_QUERY = gql`
+    query Query {
+        funds {
+            _id
             name
         }
     }

@@ -15,12 +15,21 @@ export const CREATE_CATEGORY_MUTATION = gql`
 `;
 
 export const CREATE_EXPENSE_MUTATION = gql`
-    mutation Mutation($cost: Float!, $date: String!, $name: String!) {
-        createExpense(cost: $cost, date: $date, name: $name) {
+    mutation Mutation($categoryId: ID!, $fundId: ID!, $cost: Float!, $date: String!, $name: String!) {
+        createExpense(categoryId: $categoryId, fundId: $fundId, cost: $cost, date: $date, name: $name) {
             _id
-            cost
-            date
             name
+            funds {
+                _id
+                budgetedAmount
+                name
+                expenses {
+                    _id
+                    cost
+                    date
+                    name
+                }
+            }
         }
     }
 `;
@@ -54,12 +63,21 @@ export const UPDATE_CATEGORY_MUTATION = gql`
 `;
 
 export const UPDATE_EXPENSE_MUTATION = gql`
-    mutation Mutation($_id: ID!, $cost: Float, $date: String, $name: String) {
-        updateExpense(_id: $_id, cost: $cost, date: $date, name: $name) {
+    mutation UpdateExpense($_id: ID!, $categoryId: ID!, $fundId: ID!, $cost: Float!, $date: String!, $name: String!) {
+        updateExpense(_id: $_id, categoryId: $categoryId, fundId: $fundId, cost: $cost, date: $date, name: $name) {
             _id
-            cost
-            date
             name
+            funds {
+                _id
+                budgetedAmount
+                name
+                expenses {
+                    _id
+                    cost
+                    date
+                    name
+                }
+            }
         }
     }
 `;

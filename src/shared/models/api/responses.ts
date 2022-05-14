@@ -34,6 +34,10 @@ export interface GetFundResponse {
     fund: Fund;
 }
 
+export interface GetFundsResponse {
+    funds: Fund[];
+}
+
 export interface UpdateCategoryResponse {
     updateCategory: Category;
 }

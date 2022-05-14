@@ -10,4 +10,6 @@ export class ExpenseComponent {
     @Input() name: string;
     @Input() date: string;
     @Input() cost: number;
+    @Input() categoryId: string;
+    @Input() fundId: string;
 }

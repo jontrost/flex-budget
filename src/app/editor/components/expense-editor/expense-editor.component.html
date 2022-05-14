@@ -13,6 +13,19 @@
         <mat-datepicker-toggle matSuffix [for]="expenseDate"></mat-datepicker-toggle>
         <mat-datepicker #expenseDate></mat-datepicker>
     </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Fund</mat-label>
+        <mat-select formControlName="parentIds" [compareWith]="selectComparator">
+            <mat-optgroup *ngFor="let category of categories | async" [label]="category.name">
+                <mat-option
+                    *ngFor="let fund of category.funds"
+                    [value]="{ categoryId: category._id, fundId: fund._id }"
+                >
+                    {{ fund.name }}
+                </mat-option>
+            </mat-optgroup>
+        </mat-select>
+    </mat-form-field>
     <button
         mat-flat-button
         color="primary"
